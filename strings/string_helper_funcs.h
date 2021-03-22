@@ -11,6 +11,9 @@ public:
 
     // Given a string S, reverses the substring from position I to position J
     static void reverse(std::string &s, int i, int j);
+
+    // Returns a lower-case string representation of the given string
+    static std::string toLowerCase(std::string s);
 };
 
 #endif

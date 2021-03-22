@@ -11,3 +11,11 @@ void StringHelperFuncs::reverse(std::string &s, int i, int j) {
         swap(s, i++, j--);
     }
 }
+
+std::string StringHelperFuncs::toLowerCase(std::string s) {
+    std::string res = "";
+    for (char c : s) {
+        res.push_back(tolower(c));
+    }
+    return res;
+}
