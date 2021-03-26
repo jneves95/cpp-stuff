@@ -20,7 +20,7 @@ std::string StringHelperFuncs::toLowerCase(std::string s) {
     return res;
 }
 
-bool StringHelperFuncs::isSubset(std::string s, std::string t) {
+bool StringHelperFuncs::isOrderedSubset(std::string s, std::string t) {
     auto s_it = s.begin();
     auto t_it = t.begin();
 

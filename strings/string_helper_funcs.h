@@ -16,12 +16,12 @@ public:
     static std::string toLowerCase(std::string s);
 
     /**
-     * Returns whether a given string S is a subset of a given string T.
-     * In other words, if the characters of S are sequentially, but not necessarily consecutively, found in T.
+     * Returns whether a given string S is an ordered subset of a given string T.
+     * In other words, if the characters of S are sequentially found in T, not necessarily consecutively.
      * @param s: string to look for
      * @param t: string to check against
      */
-    static bool isSubset(std::string s, std::string t);
+    static bool isOrderedSubset(std::string s, std::string t);
 
     /**
      * Returns whether a given string S is a substring of a given string T.
