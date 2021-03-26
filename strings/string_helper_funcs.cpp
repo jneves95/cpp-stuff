@@ -19,3 +19,28 @@ std::string StringHelperFuncs::toLowerCase(std::string s) {
     }
     return res;
 }
+
+bool StringHelperFuncs::isSubset(std::string s, std::string t) {
+    auto s_it = s.begin();
+    auto t_it = t.begin();
+
+    while (t_it != t.end() && s_it != s.end()) {
+        if (*t_it == *s_it) s_it++;
+        t_it++;
+    }
+
+    return s_it == s.end();
+}
+
+bool StringHelperFuncs::isSubstring(std::string s, std::string t) {
+    auto s_it = s.begin();
+    auto t_it = t.begin();
+
+    while (t_it != t.end() && s_it != s.end()) {
+        if (*t_it == *s_it) s_it++;
+        else s_it = s.begin();
+        t_it++;
+    }
+
+    return s_it == s.end();
+}
