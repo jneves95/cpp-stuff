@@ -2,7 +2,19 @@
 #include <iostream>
 #include <vector>
 
+/**
+ * LeetCode 26 March 2021 challenge
+ *
+ * A word 's' is a subset of another word 't' if all characters of 's' occur in 't'.
+ * Given a list of words A and a list of words B, a word is considered Universal if all words in B are subsets of it.
+ * Return all universal words.
+ */
+
 using namespace std;
+
+// The brute-force approach would be to check, for every word in A, if all words in B are subsets of it.
+// A more efficient approach is to traverse through all words in B and keep a count of all characters that occur, not accumulating overlaps.
+// Then we can traverse through all words in A and just match them against this counter.
 
 vector<string> wordSubsets(vector<string>& A, vector<string>& B) {
     vector<string> univ;    
