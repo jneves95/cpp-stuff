@@ -4,6 +4,8 @@
 
 /**
  * LeetCode 27 March 2021 challenge
+ * 
+ * Given a string, returns the number of palindromes found in said string. Any valid substring can be a palindrome, even single characters.
  */
 
 using namespace std;
@@ -17,16 +19,16 @@ bool isPalindrome(string s, int left, int right) {
 }
 
 // Brute-force approach: Check if every substring is a palindrome
-int palindromicSubstrings(string s) {
-    int palindromes = 0;
+int countPalindromesBrute(string s) {
+    int count = 0;
 
     for (int i = 0; i < s.size(); i++) {
         for (int j = 0; j <= i; j++) {
-            palindromes += isPalindrome(s, j, i);
+            count += isPalindrome(s, j, i);
         }
     }
 
-    return palindromes;
+    return count;
 }
 
 // Dynamic programming approach - start by establishing the base cases for smaller palindromes:
@@ -65,9 +67,9 @@ int countPalindromes(string s) {
 }
 
 int main() {
-    cout << palindromicSubstrings("aaa") << endl;
-    cout << palindromicSubstrings("abc") << endl;
-    cout << palindromicSubstrings("aabccbaa") << endl;
+    cout << countPalindromesBrute("aaa") << endl;
+    cout << countPalindromesBrute("abc") << endl;
+    cout << countPalindromesBrute("aabccbaa") << endl;
 
     cout << countPalindromes("aaa") << endl;
     cout << countPalindromes("abc") << endl;
