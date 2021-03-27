@@ -3,7 +3,7 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
-#include "string_helper_funcs.h"
+#include "../string_helper_funcs.h"
 
 /**
  * LeetCode 22 March 2021 challenge.

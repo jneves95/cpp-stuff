@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <array>
-#include "next_permutation.h"
+#include "../next-permutation/next_permutation.h"
 
 // Checks whether an integer is a power of 2
 bool isPowerOf2(int n) {
