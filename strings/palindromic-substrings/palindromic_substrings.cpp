@@ -66,6 +66,33 @@ int countPalindromes(string s) {
     return count;
 }
 
+// Another even simpler approach is to start with the smallest substrings possible that are palindromes (single character and double character)
+// and keep extending them while it stays palindromic.
+int countPalindromesExtend(string s) {
+    int n = s.length();
+    int count = n;  // Include single characters
+
+    // Odd-length palindromes starting from length 3
+    for (int i = 1, l = 0, r = 2; i < n - 1; i++, l = i-1, r = i+1) {
+        while (l >= 0 && r < n && s[l] == s[r]) {
+            count++;
+            l--;
+            r++;
+        }
+    }
+
+    // Even-length palindromes starting from length 2
+    for (int i = 0, l = 0, r = 1; i < n - 1; i++, l = i, r = i+1) {
+        while (l >= 0 && r < n && s[l] == s[r]) {
+            count++;
+            l--;
+            r++;
+        }
+    }
+
+    return count;
+}
+
 int main() {
     cout << countPalindromesBrute("aaa") << endl;
     cout << countPalindromesBrute("abc") << endl;
@@ -74,4 +101,8 @@ int main() {
     cout << countPalindromes("aaa") << endl;
     cout << countPalindromes("abc") << endl;
     cout << countPalindromes("aabccbaa") << endl;
+
+    cout << countPalindromesExtend("aaa") << endl;
+    cout << countPalindromesExtend("abc") << endl;
+    cout << countPalindromesExtend("aabccbaa") << endl;
 }
